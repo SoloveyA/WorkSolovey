@@ -1,0 +1,5 @@
+mat 1
+teo 2
+teo 3
+thu 4 5
+tui 6
