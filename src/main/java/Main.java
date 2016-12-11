@@ -1,3 +1,6 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.lang.*;
 import java.util.*;
@@ -9,6 +12,7 @@ import java.util.*;
 class Main {
     private String fileName;
     private final Map<String, LinkedList<Object>> contents = new HashMap<>();
+   private final static Logger LL = LoggerFactory.getLogger(Main.class);
 
 
     Main(String fileName) {
@@ -38,14 +42,17 @@ class Main {
 
     public void print() {
         for (Map.Entry<String, LinkedList<Object>> entry : contents.entrySet()) {
-            System.out.println(entry.getKey() + " - " + Arrays.toString(entry.getValue().toArray()));
+            System.out.println(entry.getKey() + " - " + Arrays.toString(entry.getValue().toArray()));0\ 
         }
     }
 
     public static void main(String[] args) throws IOException {
+        LL.debug("hello");
+        Test.func(".", "input.txt");
         Main main = new Main("./resource\\1\\3\\5\\7\\input.txt");
         main.read();
         main.print();
+
     }
 
 }
