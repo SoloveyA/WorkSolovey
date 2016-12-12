@@ -9,7 +9,7 @@ import java.util.*;
  * Created by Toshiba on 07.12.2016.
  */
 
-class Main {
+public class Main {
     private String fileName;
     private final Map<String, LinkedList<Object>> contents = new HashMap<>();
    private final static Logger LL = LoggerFactory.getLogger(Main.class);
@@ -42,17 +42,9 @@ class Main {
 
     public void print() {
         for (Map.Entry<String, LinkedList<Object>> entry : contents.entrySet()) {
-            System.out.println(entry.getKey() + " - " + Arrays.toString(entry.getValue().toArray()));0\ 
+            System.out.println(entry.getKey() + " - " + Arrays.toString(entry.getValue().toArray()));
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        LL.debug("hello");
-        Test.func(".", "input.txt");
-        Main main = new Main("./resource\\1\\3\\5\\7\\input.txt");
-        main.read();
-        main.print();
-
-    }
 
 }

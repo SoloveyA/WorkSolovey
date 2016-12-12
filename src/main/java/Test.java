@@ -1,11 +1,15 @@
 import java.io.*;
+import java.util.*;
 
 /**
  * Created by Toshiba on 07.12.2016.
  */
 
 public class Test {
+    public static String m;
     static boolean search;
+    private final Map<String, LinkedList<Object>> contents = new HashMap<>();
+
 
     public static void func(String path, String find) {
         File f = new File(path);
@@ -13,7 +17,8 @@ public class Test {
         for (String file : list) {
             if (find.equals(file)) {
                 search=true;
-                String s = path + "\\" + file;
+                String s = new String(path + "\\" + file);
+                m=s;
                 System.out.println(s + " ! this file");
                 return;
             }
@@ -35,6 +40,10 @@ public class Test {
 
     public static void main(String[] args) throws IOException {
         func(".", "input.txt");
+        Main f = new Main(m);
+        f.read();
+        f.print();
     }
+
 
 }
