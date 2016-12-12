@@ -1,5 +1,9 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
-import java.util.*;
+import java.lang.*;
+
 
 /**
  * Created by Toshiba on 07.12.2016.
@@ -8,7 +12,7 @@ import java.util.*;
 public class Test {
     public static String m;
     static boolean search;
-    private final Map<String, LinkedList<Object>> contents = new HashMap<>();
+    private final static Logger LL = LoggerFactory.getLogger(Main.class);
 
 
     public static void func(String path, String find) {
@@ -39,11 +43,13 @@ public class Test {
 
 
     public static void main(String[] args) throws IOException {
+        LL.debug("hello");
         func(".", "input.txt");
-        Main f = new Main(m);
-        f.read();
-        f.print();
+        Main file = new Main(m);
+        file.read();
+        file.print();
     }
 
 
 }
+
